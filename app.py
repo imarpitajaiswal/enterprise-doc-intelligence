@@ -46,7 +46,6 @@ for message in st.session_state.chat_history:
 user_query = st.chat_input("Query the document database...")
 
 if user_query:
-    # Append user query to UI
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     with st.chat_message("User"):
         st.write(user_query)
@@ -56,16 +55,13 @@ if user_query:
         with st.chat_message("AI"):
             with st.spinner("Retrieving context and generating response..."):
                 try:
-                    # Initialize LLM and Prompt
                     llm = get_llm()
                     prompt = get_enterprise_qa_prompt()
                     
-                    # Set up chains
                     retriever = st.session_state.vector_store.as_retriever(search_kwargs={"k": 3})
                     document_chain = create_stuff_documents_chain(llm, prompt)
                     retrieval_chain = create_retrieval_chain(retriever, document_chain)
                     
-                    # Execute
                     response = retrieval_chain.invoke({"input": user_query})
                     answer = response["answer"]
                     

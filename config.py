@@ -6,10 +6,11 @@ load_dotenv()
 
 class Config:
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    # Mixtral offers a 32k context window—perfect for processing massive corporate PDFs
-    MODEL_NAME = "mixtral-8x7b-32768" 
+    
+    # Updated Production Endpoint for Groq
+    MODEL_NAME = "llama-3.1-8b-instant" 
     
     # RAG Tuning Parameters
     CHUNK_SIZE = 1000
     CHUNK_OVERLAP = 200
-    EMBEDDING_MODEL = "all-MiniLM-L6-v2" # Fast, local, zero-cost embeddings
+    EMBEDDING_MODEL = "all-MiniLM-L6-v2"
