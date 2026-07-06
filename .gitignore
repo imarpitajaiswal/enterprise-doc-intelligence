@@ -1,0 +1,21 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python defaults
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Vector DB local storage
+faiss_index/
+*.index
+
+# OS files
+.DS_Store
+Thumbs.db
