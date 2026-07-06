@@ -16,6 +16,18 @@ The application extracts text from uploaded PDFs, generates semantic embeddings 
 
 ---
 
+## Demo
+
+### Upload PDF
+
+![Upload](screenshots/pdf-upload.png)
+
+### Ask Questions
+
+![Chat](screenshots/rag-answer.png)
+
+---
+
 ## ✨ Features
 
 - PDF document upload
